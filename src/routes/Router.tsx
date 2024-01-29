@@ -4,6 +4,7 @@ import {
   SignInPage,
   SignUpPage,
   SplashPage,
+  TestPage,
 } from "@/pages";
 import { Route, Routes } from "react-router-dom";
 
@@ -16,6 +17,7 @@ const RouterComponent = () => {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/signin" element={<SignInPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/test" element={<TestPage />} />
       </Routes>
     </>
   );
