@@ -1,29 +1,5 @@
-import styled from "styled-components";
-
-const ButtonWrapper = styled.button<any>`
-  width: ${({ width }) => width}rem;
-  height: ${({ height }) => height}rem;
-  color: ${({ $textColor }) => $textColor};
-  font-size: ${({ $textSize }) => $textSize}rem;
-  font-weight: ${({ $textWeight }) => $textWeight};
-  background-color: ${({ $backgroundColor }) => $backgroundColor};
-  border-color: ${({ $borderColor }) => $borderColor};
-  border-radius: 8px;
-  border: none;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-interface IButtonProps {
-  width: number;
-  height: number;
-  children: React.ReactNode;
-  textColor: string;
-  textSize?: string;
-  textWeight?: string;
-  backgroundColor: string;
-  onClick: () => void;
-}
+import { ButtonWrapper } from "./Button.styles";
+import { IButtonProps } from "./Button.types";
 
 const Button = ({
   width,
