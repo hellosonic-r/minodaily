@@ -3,10 +3,13 @@ import styled from "styled-components";
 const ButtonWrapper = styled.button<any>`
   width: ${({ width }) => width}rem;
   height: ${({ height }) => height}rem;
-  color: ${({ textColor }) => textColor};
-  font-size: ${({ textSize }) => textSize}rem;
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  border-color: ${({ borderColor }) => borderColor};
+  color: ${({ $textColor }) => $textColor};
+  font-size: ${({ $textSize }) => $textSize}rem;
+  font-weight: ${({ $textWeight }) => $textWeight};
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
+  border-color: ${({ $borderColor }) => $borderColor};
+  border-radius: 8px;
+  border: none;
   &:hover {
     cursor: pointer;
   }
@@ -19,34 +22,27 @@ interface IButtonProps {
   textSize?: string;
   textWeight?: string;
   backgroundColor: string;
-  borderColor: string;
   onClick: () => void;
 }
-/**
- *
- * @param {width} width + rem
- * @returns
- */
+
 const Button = ({
   width,
   height,
   children,
   textColor,
   textSize = "0.8",
-  textWeight = "400",
+  textWeight = "500",
   backgroundColor,
-  borderColor,
   onClick,
 }: IButtonProps) => {
   return (
     <ButtonWrapper
       width={width}
       height={height}
-      textColor={textColor}
-      textSize={textSize}
-      textWeight={textWeight}
-      backgroundColor={backgroundColor}
-      borderColor={borderColor}
+      $textColor={textColor}
+      $textSize={textSize}
+      $textWeight={textWeight}
+      $backgroundColor={backgroundColor}
       onClick={onClick}
     >
       {children}
